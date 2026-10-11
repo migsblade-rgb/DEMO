@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cwgeqydxrm14m"]
+
+[ext_resource type="Script" uid="uid://lxl4jr0jgv1b" path="res://scripts/inicio.gd" id="1_b486a"]
+[ext_resource type="Texture2D" uid="uid://ciadq2buxdlxa" path="res://assets/sprites/titulo.png" id="2_dbxlu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spghc"]
+bg_color = Color(0, 0, 0, 0.4862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54dyg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="inicio" type="Control" unique_id=1577873510]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b486a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=195529520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.48868752, 0.49519145, 0.49519056, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=733701218]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = 35.5
+offset_right = 382.0
+offset_bottom = 278.5
+grow_vertical = 2
+theme_override_constants/separation = 27
+alignment = 1
+
+[node name="jugar" type="Button" parent="VBoxContainer" unique_id=1482305840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spghc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_54dyg")
+text = "Jugar"
+
+[node name="continuar" type="Button" parent="VBoxContainer" unique_id=1461177300]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spghc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_54dyg")
+text = "Continuar"
+
+[node name="opciones" type="Button" parent="VBoxContainer" unique_id=202624089]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Opciones"
+
+[node name="salir" type="Button" parent="VBoxContainer" unique_id=2007980781]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Salir"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=139696150]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -314.0
+offset_right = 375.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dbxlu")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/continuar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]

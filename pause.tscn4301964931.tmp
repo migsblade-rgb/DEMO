@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://0iwawllcegj4"]
+
+[ext_resource type="Script" uid="uid://bnwhs7cqp4reb" path="res://pause.gd" id="1_45vjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we0d6"]
+bg_color = Color(0.050751135, 0.10143515, 0.30048245, 0.41568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldsx8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iju6h"]
+
+[node name="Pause" type="Control" unique_id=668270146]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_45vjg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=920238079]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -167.0
+offset_right = 151.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_we0d6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1322743913]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 61
+
+[node name="continuar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1654102423]
+layout_mode = 2
+text = "Continuar"
+flat = true
+
+[node name="opciones" type="Button" parent="PanelContainer/VBoxContainer" unique_id=444186162]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldsx8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iju6h")
+text = "Opciones"
+flat = true
+
+[node name="menú principal" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1962592978]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldsx8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iju6h")
+text = "Menú principal"
+flat = true
+
+[node name="salir" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1121014964]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldsx8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iju6h")
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/menú principal" to="." method="_on_menú_principal_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/salir" to="." method="_on_salir_pressed"]

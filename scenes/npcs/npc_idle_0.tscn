@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://3swk2rop2rhe"]
+
+[ext_resource type="Texture2D" uid="uid://cji4dhimsqh03" path="res://assets/sprites/spritesheet_sam.png" id="1_801m6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iju6h"]
+size = Vector3(1, 1.3859863, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb0qa"]
+atlas = ExtResource("1_801m6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txm8w"]
+atlas = ExtResource("1_801m6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcldh"]
+atlas = ExtResource("1_801m6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kko3"]
+atlas = ExtResource("1_801m6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x613x"]
+atlas = ExtResource("1_801m6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w5kw"]
+atlas = ExtResource("1_801m6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f7bn"]
+atlas = ExtResource("1_801m6")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57xne"]
+atlas = ExtResource("1_801m6")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hdmu"]
+atlas = ExtResource("1_801m6")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or65s"]
+atlas = ExtResource("1_801m6")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a03h"]
+atlas = ExtResource("1_801m6")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uihhx"]
+atlas = ExtResource("1_801m6")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldsx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb0qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txm8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcldh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kko3")
+}],
+"loop": 1,
+"name": &"sam_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x613x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w5kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f7bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57xne")
+}],
+"loop": 1,
+"name": &"sam_idle_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hdmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or65s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a03h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uihhx")
+}],
+"loop": 1,
+"name": &"sam_idle_side",
+"speed": 2.0
+}]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=473541680]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=239447632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10266113, 0)
+shape = SubResource("BoxShape3D_iju6h")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=865850599]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ldsx8")
+animation = &"sam_idle"

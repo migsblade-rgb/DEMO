@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cra6gmw3idckl"]
+
+[ext_resource type="Texture2D" uid="uid://3itukegbt1ns" path="res://assets/sprites/Nuevo sprite.png" id="1_osc7o"]
+[ext_resource type="PackedScene" uid="uid://bfd8tdas5wlkp" path="res://scenes/player/will.tscn" id="2_wjk5u"]
+[ext_resource type="PackedScene" uid="uid://0iwawllcegj4" path="res://scenes/ui/pause.tscn" id="3_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://3swk2rop2rhe" path="res://scenes/npcs/npc_idle_0.tscn" id="4_wjk5u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldsx8"]
+albedo_texture = ExtResource("1_osc7o")
+uv1_offset = Vector3(1.2, 0, 0)
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="level_0" type="Node3D" unique_id=1721654631]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=557395673]
+use_collision = true
+size = Vector3(12.5, 1, 12.5)
+material = SubResource("StandardMaterial3D_ldsx8")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1528168087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, 0)
+use_collision = true
+size = Vector3(1, 2, 12.5)
+material = SubResource("StandardMaterial3D_ldsx8")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=30761044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 0)
+use_collision = true
+size = Vector3(1, 2, 12.5)
+material = SubResource("StandardMaterial3D_ldsx8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1574338891]
+transform = Transform3D(0.74205613, -0.24991198, 0.62201023, 0.11183361, 0.9610554, 0.25271678, -0.66094327, -0.11796832, 0.7411056, 3.5731335, 3.0747252, 0.12615895)
+shadow_enabled = true
+shadow_bias = 0.001
+shadow_reverse_cull_face = true
+shadow_blur = 0.396
+
+[node name="will" parent="." unique_id=982882230 instance=ExtResource("2_wjk5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1682017292]
+
+[node name="Pause" parent="." unique_id=668270146 instance=ExtResource("3_xy1qu")]
+
+[node name="StaticBody3D" parent="." unique_id=473541680 instance=ExtResource("4_wjk5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.3, 0)
