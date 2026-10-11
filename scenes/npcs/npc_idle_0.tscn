@@ -69,7 +69,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4kko3")
 }],
 "loop": 1,
-"name": &"sam_idle",
+"name": &"mat_idle",
 "speed": 2.0
 }, {
 "frames": [{
@@ -86,7 +86,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_57xne")
 }],
 "loop": 1,
-"name": &"sam_idle_back",
+"name": &"mat_idle_back",
 "speed": 2.0
 }, {
 "frames": [{
@@ -103,7 +103,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uihhx")
 }],
 "loop": 1,
-"name": &"sam_idle_side",
+"name": &"mat_idle_side",
 "speed": 2.0
 }]
 
@@ -120,4 +120,4 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ldsx8")
-animation = &"sam_idle"
+animation = &"mat_idle_side"
